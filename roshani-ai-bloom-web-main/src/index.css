@@ -1,0 +1,79 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 252 80% 74%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 346 100% 93%;
+    --secondary-foreground: 240 10% 3.9%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+    --accent: 252 80% 74%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 252 80% 74%;
+    --radius: 1rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative px-3 py-2 text-foreground/80 hover:text-foreground transition-colors after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-roshani-purple after:transition-all hover:after:w-full;
+  }
+  
+  .active-link {
+    @apply text-foreground font-medium after:w-full;
+  }
+  
+  .btn-primary {
+    @apply bg-roshani-purple text-white hover:bg-roshani-purple/90 px-6 py-3 rounded-full font-medium transition-all hover:shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply bg-roshani-pink text-foreground hover:bg-roshani-pink/90 px-6 py-3 rounded-full font-medium transition-all hover:shadow-md;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-roshani-purple text-roshani-purple hover:bg-roshani-purple/10 px-6 py-3 rounded-full font-medium transition-all;
+  }
+  
+  .card {
+    @apply bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all border border-roshani-gray/50;
+  }
+  
+  .container-custom {
+    @apply container mx-auto px-4 md:px-8 max-w-7xl;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .heading-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-roshani-purple to-roshani-pink;
+  }
+}
